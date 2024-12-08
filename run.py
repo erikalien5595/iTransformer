@@ -11,6 +11,8 @@ if __name__ == '__main__':
     torch.manual_seed(fix_seed)
     np.random.seed(fix_seed)
 
+    torch.multiprocessing.set_sharing_strategy('file_system')
+    print('进入run_longExp.py时的卡数：', torch.cuda.device_count())
     parser = argparse.ArgumentParser(description='iTransformer')
 
     # basic config
